@@ -44,8 +44,39 @@ destinationImg.addEventListener('dblclick', (event) => {
 
 let navBar = document.querySelectorAll('nav a')
 navBar.forEach(link => {
-    console.log(link)
-    link.addEventListener('click', (event) =>{
-        event.target.style.color = 'red'
+    //console.log(link)
+    link.addEventListener('mousedown', (event) =>{
+        event.target.style.color = 'purple'
+        event.target.style.background = 'pink'
+        event.preventDefault()
     })
 })
+
+window.addEventListener('contextmenu', event => {
+    event.preventDefault()
+})
+
+howTall = 0;
+howWide = 0;
+function windowSize(){
+    howTall = window.innerHeight;
+    howWide = window.innerWidth;
+    console.log(`height: ${howTall}, width: ${howWide}`)
+}
+window.addEventListener('resize', windowSize)
+
+window.addEventListener('offline', (event) => {
+    console.log('The network connection has been lost.');
+})
+
+let paragraphs = document.querySelectorAll('.content-pick p')
+console.log(paragraphs)
+paragraphs.forEach(para => {
+para.addEventListener('mouseenter', (event) => {
+    event.target.style.border = '5px dotted black'
+})
+para.addEventListener('mouseleave', (event) =>{
+    event.target.style.border = '3px solid blue'
+})
+})
+
