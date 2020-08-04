@@ -35,3 +35,16 @@ wholePage.addEventListener('keydown', event => {
 window.onload = (event) => {
     console.log('You are currently viewing the whole page')
 }
+
+// const navBar = document.querySelector('.nav')
+// navBar.addEventListener('dblclick', (event) => {
+//     event.target.font = 'Rowdies'
+//     event.target.
+    
+// })
+
+const destinationImg = document.querySelector('.content-destination img')
+destinationImg.addEventListener('dblclick', (event) => {
+    event.target.style.visibility = 'hidden'
+    console.log('double click')
+})
