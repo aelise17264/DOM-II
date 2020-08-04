@@ -27,6 +27,7 @@ let wholePage = document.querySelector('html')
 wholePage.addEventListener('keydown', event => {
     if(event.key === 'Tab'){
         event.target.style.background = '#86c4ba'
+        console.log('make it blue')
     }else {
         console.log('hit Tab...give it a try')
     }
@@ -50,11 +51,9 @@ navBar.forEach(link => {
         event.target.style.background = 'pink'
         event.preventDefault()
     })
+    
 })
 
-window.addEventListener('contextmenu', event => {
-    event.preventDefault()
-})
 
 howTall = 0;
 howWide = 0;
@@ -62,6 +61,7 @@ function windowSize(){
     howTall = window.innerHeight;
     howWide = window.innerWidth;
     console.log(`height: ${howTall}, width: ${howWide}`)
+    
 }
 window.addEventListener('resize', windowSize)
 
@@ -80,3 +80,10 @@ para.addEventListener('mouseleave', (event) =>{
 })
 })
 
+Array.from(document.all).forEach(element => {
+    element.addEventListener('keypress', (event) => {
+    console.log (event.target)
+    console.log(event.currentTarget)
+    event.stopPropagation()
+    })
+})
